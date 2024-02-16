@@ -1,0 +1,29 @@
+﻿@model String
+
+@{
+    ViewData["Title"] = "Thank You";
+}
+
+<h1>@ViewBag.Title</h1>
+
+<div>
+    <p> Thank you for submitting your response!</p>
+
+    @if (Model == "Yes")
+    {
+        <div class="alert alert-success" role="alert">
+            We are thrilled that you'll be joining us.
+        </div>
+
+    }
+    else
+    {
+        <div class="alert alert-danger" role="alert">
+            We are sorry that you'll be not joining us.
+        </div>
+    }
+
+
+</div>
+
+<a asp-controller="Course" asp-action="List">All events</a>

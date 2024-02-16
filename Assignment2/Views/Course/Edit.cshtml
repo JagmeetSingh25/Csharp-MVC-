@@ -1,0 +1,35 @@
+﻿@model CourseViewModel
+
+
+@{
+    ViewData["Title"] = "Edit an Course";
+}
+
+<h1>@ViewBag.Title</h1>
+
+<form method="post" asp-action="Edit">
+    <div class="mb-3">
+
+        <input type="hidden" asp-for="Course.CourseId" />
+
+        <label class="form-label" asp-for="Course.Name"> Name</label>
+        <span class="form-text text-danger" asp-validation-for="Course.Name"></span>
+        <input class="form-control" type="text" asp-for="Course.Name" />
+
+        <label class="form-label" asp-for="Course.Instructor">Instructor Name </label>
+        <span class="form-text text-danger" asp-validation-for="Course.Instructor"></span>
+        <input class="form-control" type="text" asp-for="Course.Instructor" />
+
+        <label class="form-label" asp-for="Course.StartDate">Start Date</label>
+        <span class="form-text text-danger" asp-validation-for="Course.StartDate"></span>
+        <input class="form-control" type="date" asp-for="Course.StartDate" />
+
+
+        <label class="form-label" asp-for="Course.Roomnumber"> Roomnumber</label>
+        <span class="form-text text-danger" asp-validation-for="Course.Roomnumber"></span>
+        <input class="form-control" type="text" asp-for="Course.Roomnumber" />
+
+        <input type="submit" value="Save" />
+        <a asp-controller="btn btn-secondary" asp-action="List"></a>
+    </div>
+</form>
